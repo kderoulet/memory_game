@@ -54,5 +54,15 @@ for (var i = 0; i < cards.length; i++) {
 }
 }
 
+var newCards = document.getElementById("game-board").childNodes;
+var resetBoard = function () {
+	for (var i = 0; i < 4; i++) {
+	newCards[i + 1].setAttribute("src", "images/back.png");
+	cardsInPlay.pop();
+}
+}
+
+document.getElementById("reset").addEventListener("click", resetBoard);
+
 createBoard();
 
