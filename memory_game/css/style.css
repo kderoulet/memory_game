@@ -86,6 +86,8 @@ footer {
 	font-weight: 700;
 }
 
+.scoreboard
+
 #instructions{
 	
 }
@@ -93,6 +95,7 @@ footer {
 
 }
 
-#resest {
-	
+#reset {
+	font-family: raleway;
+	margin: 5px;
 }

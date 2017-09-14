@@ -21,16 +21,21 @@ cardImage: "images/king-of-diamonds.png"
 }
 ];
 var cardsInPlay = [];
+var successfulMatches = 0;
+var failedMatches = 0;
 
 var checkForMatch = function () {
 if (cardsInPlay.length === 2) {
 	if (cardsInPlay[0] === cardsInPlay[1]) {
 		alert("You found a match!")
+		successfulMatches += 1;
 	}
 	else {
 		alert("Sorry, try again.")
+		failedMatches += 1;
 	}
 }
+updateScore();
 }
 
 var flipCard = function () {
@@ -60,6 +65,10 @@ var resetBoard = function () {
 	newCards[i + 1].setAttribute("src", "images/back.png");
 	cardsInPlay.pop();
 }
+}
+
+var updateScore = function () {
+document.getElementById("scoreboard").innerHTML = "Successful matches: " + successfulMatches + " | " + "Failed matches: " + failedMatches;
 }
 
 document.getElementById("reset").addEventListener("click", resetBoard);
